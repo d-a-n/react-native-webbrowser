@@ -1,6 +1,6 @@
 {
   "name": "react-native-webbrowser",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A cross-platform (iOS / Android), full-featured in-app web browser component for React Native that is highly highly customizable",
   "main": "index.js",
   "scripts": {
