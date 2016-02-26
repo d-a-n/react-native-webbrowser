@@ -44,7 +44,8 @@ class SampleApp extends Component {
 * `foregroundColor - string` optional, sets the forground color of text and icon elements
 * `backgroundColor - string` optional, sets the background color
 
-## Screenshot
+## Screenshots
 
-![example](https://raw.githubusercontent.com/d-a-n/react-native-webbrowser/master/assets/images/screenshot.png)
-![example](https://raw.githubusercontent.com/d-a-n/react-native-webbrowser/master/assets/images/screenshot2.png)
+<img src="https://raw.githubusercontent.com/d-a-n/react-native-webbrowser/master/assets/images/screenshot.png" width="400" />
+&nbsp;&nbsp;&nbsp;
+<img src="https://raw.githubusercontent.com/d-a-n/react-native-webbrowser/master/assets/images/screenshot2.png" width="400" />
