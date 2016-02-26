@@ -1,0 +1,16 @@
+{
+  "verbose": true,
+  "colours": true,
+  "stdout": true,
+  "ignore": [
+    "SampleApp",
+    ".git"
+  ],
+  "watch": [
+    ".."
+  ],
+  "ext": "js json png jpeg jpg",
+  "events": {
+    "restart": "cp -rf ../*.{js,json} ../assets node_modules/react-native-webbrowser/"
+  }
+}
