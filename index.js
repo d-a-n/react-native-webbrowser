@@ -9,7 +9,7 @@ var {
 
 import BaseComponent from './BaseComponent'
 import Utils from './Utils'
-
+import Spinner from 'react-native-loading-spinner-overlay';
 
 import styles from './styles'
 
@@ -17,8 +17,31 @@ import StatusBar from './StatusBar'
 import AddressBar from './AddressBar'
 import Toolbar from './Toolbar'
 
-const TEXT_INPUT_REF = 'urlInput';
 const WEBVIEW_REF = 'webview';
+
+const propTypes = {
+    url: PropTypes.string,
+    hideToolbar: PropTypes.bool,
+    hideAddressBar: PropTypes.bool,
+    hideStatusBar: PropTypes.bool,
+    hideHomeButton: PropTypes.bool,
+    hideActivityIndicator: PropTypes.bool,
+    foregroundColor: PropTypes.string,
+    backgroundColor: PropTypes.string,
+    onNavigationStateChange: PropTypes.func,
+    onShouldStartLoadWithRequest: PropTypes.func
+}
+
+const defaultProps = {
+    url: '',
+    hideToolbar: false,
+    hideAddressBar: false,
+    hideStatusBar: false,
+    hideHomeButton: false,
+    hideActivityIndicator: false,
+    onNavigationStateChange: ()=>{},
+    onShouldStartLoadWithRequest: ()=>true,
+}
 
 class Webbrowser extends BaseComponent {
 
@@ -117,6 +140,7 @@ class Webbrowser extends BaseComponent {
                     scalesPageToFit={this.state.scalesPageToFit}
                 />
                 {this.renderToolbar()}
+                <Spinner visible={this.state.loading} />
             </View>
         );
     }
@@ -145,7 +169,7 @@ class Webbrowser extends BaseComponent {
 
     onShouldStartLoadWithRequest(event) {
         // Implement any custom loading logic here, don't forget to return!
-        return true;
+        return this.props.onShouldStartLoadWithRequest(event);
     }
 
     onNavigationStateChange(navState) {
@@ -158,24 +182,12 @@ class Webbrowser extends BaseComponent {
             loading: navState.loading,
             scalesPageToFit: true
         });
+
+        this.props.onNavigationStateChange(navState);
     }
 };
 
-Webbrowser.propTypes = {
-    url: PropTypes.string,
-    hideToolbar: PropTypes.bool,
-    hideAddressBar: PropTypes.bool,
-    hideStatusBar: PropTypes.bool,
-    hideHomeButton: PropTypes.bool,
-    foregroundColor: PropTypes.string,
-    backgroundColor: PropTypes.string
-};
-Webbrowser.defaultProps = {
-    url: '',
-    hideToolbar: false,
-    hideAddressBar: false,
-    hideStatusBar: false,
-    hideHomeButton: false
-};
+Webbrowser.propTypes = propTypes;
+Webbrowser.defaultProps = defaultProps;
 
 module.exports = Webbrowser;

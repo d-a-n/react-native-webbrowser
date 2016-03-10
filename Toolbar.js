@@ -100,12 +100,9 @@ Toolbar.defaultProps = {
     forwardButtonEnabled: false,
     homeButtonEnabled: true,
     hideHomeButton: false,
-    onBack: ()=> {
-    },
-    onHome: ()=> {
-    },
-    onForward: ()=> {
-    }
+    onBack: ()=> {},
+    onHome: ()=> {},
+    onForward: ()=> {}
 };
 
 module.exports = Toolbar;

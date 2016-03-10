@@ -17,8 +17,8 @@ class SampleApp extends Component {
                     hideToolbar={false}
                     hideAddressBar={false}
                     hideStatusBar={false}
-                    foregroundColor={'#fff'}
-                    backgroundColor={'#D61B5D'}
+                    foregroundColor="#fff"
+                    backgroundColor="#D61B5D"
                 />
             </View>
         );
