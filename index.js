@@ -50,6 +50,7 @@ class Webbrowser extends BaseComponent {
 
         this.state = {
             status: '',
+            currentUrl: Utils.sanitizeUrl(this.props.url),
             url: Utils.sanitizeUrl(this.props.url),
             backButtonEnabled: false,
             forwardButtonEnabled: false,
@@ -85,7 +86,7 @@ class Webbrowser extends BaseComponent {
         return <AddressBar
             onReload={this.reload}
             onLoad={(url)=>{this.load(url)}}
-            url={this.state.url}
+            url={this.state.currentUrl}
             foregroundColor={this.props.foregroundColor}
         />
     }
@@ -168,7 +169,6 @@ class Webbrowser extends BaseComponent {
     }
 
     onShouldStartLoadWithRequest(event) {
-        // Implement any custom loading logic here, don't forget to return!
         return this.props.onShouldStartLoadWithRequest(event);
     }
 
@@ -177,7 +177,7 @@ class Webbrowser extends BaseComponent {
         this.setState({
             backButtonEnabled: navState.canGoBack,
             forwardButtonEnabled: navState.canGoForward,
-            url: navState.url,
+            currentUrl: navState.url,
             status: navState.title,
             loading: navState.loading,
             scalesPageToFit: true
@@ -190,4 +190,4 @@ class Webbrowser extends BaseComponent {
 Webbrowser.propTypes = propTypes;
 Webbrowser.defaultProps = defaultProps;
 
-module.exports = Webbrowser;
+export default Webbrowser;
