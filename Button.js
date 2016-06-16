@@ -3,13 +3,13 @@
 import React, {
   Component,
   PropTypes,
-  Platform,
 } from 'react';
 
 import {
   View,
   TouchableOpacity,
   StyleSheet,
+  Platform,
   ActivityIndicatorIOS,
   ProgressBarAndroid,
   TouchableNativeFeedback,
