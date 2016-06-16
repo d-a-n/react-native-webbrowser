@@ -1,10 +1,13 @@
 'use strict';
 
-import React from 'react-native';
-var {
-    View,
-    Image
-    } = React;
+import React, {
+  PropTypes,
+} from 'react';
+
+import {
+  View,
+  Image,
+} from 'react-native';
 
 import BaseComponent from './BaseComponent'
 import Button from './Button'
@@ -85,14 +88,14 @@ class Toolbar extends BaseComponent {
 }
 
 Toolbar.propTypes = {
-    backButtonEnabled: React.PropTypes.bool,
-    forwardButtonEnabled: React.PropTypes.bool,
-    homeButtonEnabled: React.PropTypes.bool,
-    hideHomeButton: React.PropTypes.bool,
-    onBack: React.PropTypes.func,
-    onHome: React.PropTypes.func,
-    onForward: React.PropTypes.func,
-    foregroundColor: React.PropTypes.string
+    backButtonEnabled: PropTypes.bool,
+    forwardButtonEnabled: PropTypes.bool,
+    homeButtonEnabled: PropTypes.bool,
+    hideHomeButton: PropTypes.bool,
+    onBack: PropTypes.func,
+    onHome: PropTypes.func,
+    onForward: PropTypes.func,
+    foregroundColor: PropTypes.string
 };
 
 Toolbar.defaultProps = {
