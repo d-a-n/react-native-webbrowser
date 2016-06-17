@@ -1,10 +1,13 @@
 'use strict';
 
-import React from 'react-native';
-var {
-    TextInput,
-    View,
-    } = React;
+import React, {
+  PropTypes,
+} from 'react';
+
+import ReactNative, {
+  TextInput,
+  View,
+} from 'react-native';
 
 import BaseComponent from './BaseComponent'
 import Utils from './Utils'
@@ -65,6 +68,7 @@ class AddressBar extends BaseComponent {
                     onSubmitEditing={this.onSubmitEditing}
                     onChange={this.handleTextInputChange}
                     clearButtonMode="while-editing"
+                    autoCorrect={false}
                     style={[styles.addressBarTextInput, this.props.foregroundColor && {color:this.props.foregroundColor}]}
                 />
             </View>
@@ -73,10 +77,10 @@ class AddressBar extends BaseComponent {
 }
 
 AddressBar.propTypes = {
-    url: React.PropTypes.string,
-    onLoad: React.PropTypes.func,
-    onReload: React.PropTypes.func,
-    foregroundColor: React.PropTypes.string
+    url: PropTypes.string,
+    onLoad: PropTypes.func,
+    onReload: PropTypes.func,
+    foregroundColor: PropTypes.string
 };
 
 AddressBar.defaultProps = {
@@ -86,4 +90,3 @@ AddressBar.defaultProps = {
 };
 
 module.exports = AddressBar;
-

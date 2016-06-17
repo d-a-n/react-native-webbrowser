@@ -20,13 +20,20 @@ export default StyleSheet.create({
         shadowRadius:SHADOW_RADIUS,
         shadowOffset: { height:1, width: 0 },
     },
-
     addressBarRow: {
+        flex: 1,
         flexDirection: 'row',
         marginTop: ELEMENT_MARGIN/2,
         marginBottom: ELEMENT_MARGIN/2,
-        marginLeft: ELEMENT_MARGIN,
-        marginRight: ELEMENT_MARGIN,
+        marginLeft: ELEMENT_MARGIN + 7,
+        marginRight: ELEMENT_MARGIN + 7,
+    },
+    backButton: {
+      width: 20,
+      height: 20,
+      opacity: 0.9,
+      marginTop: ELEMENT_MARGIN/2 + 2,
+      marginLeft: ELEMENT_MARGIN + 7,
     },
     webView: {
         backgroundColor: BGWASH,
